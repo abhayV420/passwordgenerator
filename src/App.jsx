@@ -43,7 +43,7 @@ function App() {
 
   return (
   <div className='bg-black w-full h-screen flex justify-center py-11 text-orange-400'>
-     <div className='bg-gray-800 sm:h-[17%] h-[27%] w-[90%] sm:w-[55%] rounded-lg flex flex-col py-4 px-5 gap-8 '>
+     <div className='bg-gray-800 sm:h-[17%] h-[27%] w-[90%] sm:w-[55%] rounded-lg flex flex-col sm:py-4 py-2 px-5 gap-8 '>
 
                         {/* upper scetion */}
             <div className='flex gap-3'>
