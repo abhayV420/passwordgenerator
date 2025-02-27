@@ -6,6 +6,7 @@ function App() {
   const [numbersAllowed, setNumbersAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
+  const [copy, setCopy] = useState(false);
   
 
   const passwordGenerator = useCallback(()=>{
@@ -33,9 +34,12 @@ function App() {
   const savePassToClipBoard = useCallback(()=>{
     passRef.current?.select();
     window.navigator.clipboard.writeText(password);
-    alert(`Copied Password:-
-            ${password}`)
-  }, [password])
+    setCopy(true);
+  }, [password]);
+
+  useEffect(()=>{
+    setCopy(false);
+  }, [password, length, numbersAllowed, charAllowed])
 
   return (
   <div className='bg-black w-full h-screen flex justify-center py-11 text-orange-400'>
@@ -44,7 +48,7 @@ function App() {
                         {/* upper scetion */}
             <div className='flex gap-3'>
               <input className='w-[87%] h-11 rounded-lg pl-2' value={password} type="text" readOnly ref={passRef} />
-              <button className='bg-blue-600 text-white rounded-lg w-[100px] hover:bg-blue-800' onClick={savePassToClipBoard} >Copy</button>
+              <button className={` text-white rounded-lg w-[100px] ${copy ? 'bg-white text-purple-700' : 'bg-blue-600 hover:bg-blue-800'} `} onClick={savePassToClipBoard} > {copy ? 'Copied ✔️' : 'Copy'} </button>
             </div>
 
                          {/* Lower Section */}
