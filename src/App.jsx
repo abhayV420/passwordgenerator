@@ -43,7 +43,7 @@ function App() {
 
   return (
   <div className='bg-black w-full h-screen flex justify-center py-11 text-orange-400'>
-     <div className='bg-gray-800 h-[17%] w-[90%] sm:w-[35%] rounded-lg flex flex-col py-4 px-5 gap-8 min-w-[550px] '>
+     <div className='bg-gray-800 sm:h-[17%] h-[27%] w-[90%] sm:w-[55%] rounded-lg flex flex-col py-4 px-5 gap-8 '>
 
                         {/* upper scetion */}
             <div className='flex gap-3'>
@@ -53,25 +53,25 @@ function App() {
 
                          {/* Lower Section */}
 
-               <div className='flex gap-3 mx-6 '>
+               <div className='flex flex-col sm:flex-row gap-3 lg:mx-6 items-end '>
                 
                  <div className='flex text-lg gap-1'>
-                  <input className='cursor-pointer' id='range' type="range" min={6} max={30} value={length} onChange={(e)=>{setLength(e.target.value)}} />
-                  <label htmlFor='range' >Length:{length}</label>
+                  <input className='cursor-pointer w-16' id='range' type="range" min={6} max={30} value={length} onChange={(e)=>{setLength(e.target.value)}} />
+                  <label className='text-sm lg:text-lg' htmlFor='range' >Length:{length}</label>
                  </div>
 
                  <div className='flex text-xl gap-2'>
                   <input className='cursor-pointer' id='numbers' type="checkbox" defaultChecked={numbersAllowed} onChange={()=>{
                     setNumbersAllowed((prev)=>!prev);
                   }} />
-                  <label htmlFor='numbers'>Numbers</label>
+                  <label className='text-sm lg:text-lg' htmlFor='numbers'>Numbers</label>
                  </div>
                  
                  <div className='flex text-xl gap-2'>
                   <input className='cursor-pointer' id='characters' type="checkbox" defaultChecked={charAllowed} onChange={()=>{
                     setCharAllowed((prev)=>!prev)
                   }} />
-                  <label htmlFor='characters'>Characters</label>
+                  <label className='text-sm lg:text-lg' htmlFor='characters'>Characters</label>
                  </div>
 
                </div>
