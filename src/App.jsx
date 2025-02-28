@@ -24,7 +24,7 @@ function App() {
     }
 
     setPassword(pass)
-  }, [length, numbersAllowed, charAllowed, setPassword])
+  }, [length, numbersAllowed, charAllowed, setPassword]);
 
   useEffect(()=>{
     passwordGenerator()
@@ -43,7 +43,7 @@ function App() {
 
   return (
   <div className='bg-black w-full h-screen flex justify-center py-11 text-orange-400'>
-     <div className='bg-gray-800 sm:h-[17%] h-[27%] w-[90%] sm:w-[55%] rounded-lg flex flex-col sm:py-4 py-2 px-5 gap-8 '>
+     <div className='bg-gray-800 sm:h-[17%] h-[27%] w-[90%] sm:w-[400px] lg:w-[500px] rounded-lg flex flex-col sm:py-4 py-2 px-5 gap-8 '>
 
                         {/* upper scetion */}
             <div className='flex gap-3'>
@@ -53,7 +53,7 @@ function App() {
 
                          {/* Lower Section */}
 
-               <div className='flex flex-col sm:flex-row gap-3 lg:mx-6 items-end '>
+               <div className='flex flex-col sm:flex-row gap-3 sm:mx-6 items-end  '>
                 
                  <div className='flex text-lg gap-1'>
                   <input className='cursor-pointer w-16' id='range' type="range" min={6} max={30} value={length} onChange={(e)=>{setLength(e.target.value)}} />
